@@ -1,19 +1,22 @@
 @charset "UTF-8";
 
-.en_lang
-	position: absolute
-	top: -9999px
-	left: -9999px
-.lang_buttons
-	text-align: right
-	.button
-		display: inline-block
-		text-decoration: none
-		border: 1px solid gray
-		padding: 5px 15px
-		margin-top: 20px
-		margin-right: 0
-	.en_lang
-		position: absolute
-		top: -9999px
-		left: -9999px
+.en_lang {
+    position: absolute;
+    top: -9999px;
+    left: -9999px; }
+  
+.lang_buttons {
+    text-align: right; }
+
+.lang_buttons .button {
+    display: inline-block;
+    text-decoration: none;
+    border: 1px solid gray;
+    padding: 5px 15px;
+    margin-top: 20px;
+    margin-right: 0; }
+
+.lang_buttons .en_lang {
+    position: absolute;
+    top: -9999px;
+    left: -9999px; }
