@@ -3,20 +3,150 @@
 .en_lang {
     position: absolute;
     top: -9999px;
-    left: -9999px; }
+    left: -9999px;
+  }
   
-.lang_buttons {
-    text-align: right; }
-
-.lang_buttons .button {
+  .lang_buttons {
+    text-align: right;
+  }
+  
+  .lang_buttons .button {
     display: inline-block;
     text-decoration: none;
     border: 1px solid gray;
     padding: 5px 15px;
     margin-top: 20px;
-    margin-right: 0; }
+    margin-right: 0;
+  }
 
-.lang_buttons .en_lang {
+  .lang_buttons .en_lang {
     position: absolute;
     top: -9999px;
-    left: -9999px; }
+    left: -9999px;
+  }
+
+  /* Map */
+
+  #map {
+    /* width: 100%; height: 100%; padding: 0; margin: 0; background-color: red; */
+    height: 500px;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    opacity: 100%;
+    background-color: white;
+    opacity: .7;
+    transition-duration: 1s;
+    
+
+    cursor: url("https://maps.gstatic.com/mapfiles/openhand_8_8.cur"), default;
+}
+
+#map:hover {
+  opacity: .99;
+  transition-duration: 1s;
+}
+
+
+.quote-circle-image {
+  --b: 4px;     /* the border thickness*/
+  --g: 6px;    /* the gap */
+  --c: #5acea4;; /* the color */
+  
+  width: var(--s);
+  aspect-ratio: 1;
+  outline: calc(var(--s)/2) solid #0009;
+  outline-offset: calc(var(--s)/-2);
+  cursor: pointer;
+  transition: .3s;
+}
+.quote-circle-image:hover {
+  outline: var(--b) solid var(--c);
+  outline-offset: var(--g);
+}
+
+.quote-circle-image + .quote-circle-image {
+  border-radius: 50%;
+}
+
+
+
+
+
+
+.gallery {
+  --z: 32px;  /* control the zig-zag  */
+  --s: 360px; /* control the size */
+  --g: 8px;   /* control the gap */
+  
+  display: grid;
+  gap: var(--g);
+  width: calc(2*var(--s) + var(--g));
+  grid-auto-flow: column;
+}
+.gallery > img {
+  width: 0;
+  min-width: calc(100% + var(--z)/2);
+  height: var(--s);
+  object-fit: cover;
+  -webkit-mask: var(--mask);
+          mask: var(--mask);
+  cursor: pointer;
+  transition: .5s;
+}
+.gallery > img:hover {
+  width: calc(var(--s)/2);
+}
+.gallery > img:first-child {
+  place-self: start;
+  clip-path: polygon(calc(2*var(--z)) 0,100% 0,100% 100%,0 100%);
+  --mask: 
+    conic-gradient(from -135deg at right,#0000,#000 1deg 89deg,#0000 90deg) 
+      50%/100% calc(2*var(--z)) repeat-y;
+}
+.gallery > img:last-child {
+  place-self: end;
+  clip-path: polygon(0 0,100% 0,calc(100% - 2*var(--z)) 100%,0 100%);
+  --mask: 
+    conic-gradient(from   45deg at left ,#0000,#000 1deg 89deg,#0000 90deg) 
+      50% calc(50% - var(--z))/100% calc(2*var(--z)) repeat-y;
+}
+
+
+
+
+
+
+
+
+.hover-line {
+  position: relative;
+  text-decoration: none;
+}
+
+.hover-line::before {
+  background: #cf1f29;
+  content: "";
+  inset: 0;
+  position: absolute;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s ease-in-out;
+  z-index: -1;
+}
+
+.hover-line:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+
+
+
+
+
+
+.theLightSide{
+  background-color: white;
+  color: #242424;
+}
