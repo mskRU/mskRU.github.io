@@ -33,5 +33,5 @@ $(".button.rus_lang").click(function(){
 //   body.className = currentClass == "dark-mode" ? "light-mode" : "dark-mode";
 // }
 
-function darkMode() {  document.body.classList.toggle("theLightSide");
-}
+// function darkMode() {  document.body.classList.toggle("theLightSide");
+// }
